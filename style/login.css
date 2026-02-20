@@ -1,0 +1,48 @@
+body{
+    margin: 0px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    height: 50px;
+}
+
+a{
+    text-decoration: none;
+}
+.container{
+    text-align: center;
+}
+.form-box{
+    border: 1px solid lightgray;
+    box-shadow: inset;
+    border-radius: 7px;
+    padding: 20px;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+    flex:space-between;
+    gap: 8px;
+}
+#email,#password,#btn,#auth{
+    border-radius: 7px;
+}
+
+
+nav{
+    border: 1px solid lightgray;
+}
+#signup{
+    margin-top: 40px;
+}
+footer{
+    flex: end;
+    margin-top: 40px;
+
+}

@@ -1,0 +1,130 @@
+
+        /* 1. RESET & BODY */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 2. NAVBAR - Fixed the "odd" border */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: white;
+            /* Using a subtle shadow instead of a thick border looks more modern */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #27ae60;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            margin-left: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* 3. HERO SECTION */
+        .hero {
+            background-color: #f0fdf4; 
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #2ecc71;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            /* Simple Animation */
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #27ae60;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* 4. THE PROCESS SECTION - Fixed the "Broken" Layout */
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+
+        .feature-flex {
+            display: flex;
+            flex-wrap: wrap;       /* This allows cards to wrap on mobile */
+            justify-content: center; /* This keeps them centered when they wrap */
+            gap: 20px;             /* This creates even spacing between cards */
+        }
+
+        .feature-box {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            /* Fixed width so they stay consistent */
+            width: 300px; 
+            transition: 0.3s;
+        }
+
+        /* Simple Animation: Lifts the card up slightly */
+        .feature-box:hover {
+            transform: translateY(-5px);
+            border-color: #27ae60;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            font-size: 40px;
+            font-weight: bold;
+            color: #ddd; /* Light grey for the number */
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .feature-box h3 {
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+
+        /* 5. FOOTER */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+        #logo{
+            width: 40px;
+        }

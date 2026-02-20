@@ -1,0 +1,40 @@
+:root {
+    --primary-color: rgb(0, 149, 255);
+    --secondary-color: grey;
+    --font-color: rgb(71, 9, 95);
+}
+
+body{
+    margin: 1px;
+    padding: 0;
+
+}
+#navbar li a{
+    color: var(--font-color);
+    text-decoration: none;
+    
+}
+#navbar a:hover{
+    color: brown;
+}
+#navbar a:visited{
+    color: black;
+}
+ul{
+    display: flex;
+    list-style-type: none;
+    
+}
+li{
+    flex: 1;
+    font: larger;
+    background-color: var(--secondary-color);
+}
+nav{
+    background-color: var(--primary-color);
+    padding: 2px;
+}
+section{
+    display: flex;
+    justify-content: space-between;
+}

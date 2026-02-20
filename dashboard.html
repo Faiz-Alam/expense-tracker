@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style/dashboard.css">
+
+</head>
+<body>
+    <header>
+    <nav>
+        <ul id="navbar">
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About Us">About Us</a></li>
+            <li><a href="#Contact">Contact</a></li>
+            <li><a href="#Price Tracker">Price Tracker</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+    <h1>Expense Tracker</h1>
+    <h3>Track where your money goes.</h3>
+    <section>
+        <div class="total-value">
+            <p>Income</p>
+            <div class="income-total">
+                ₹ 85,000
+            </div>
+        </div>
+        <div class="total-value">
+            <p>expenses</p>
+            <div class="income-total">
+                ₹ 42,300
+            </div>
+        </div>
+
+        <div class="total-value">
+            <p>Savings</p>
+            <div class="income-total">
+                ₹ 42,700
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <form action="#">
+            <input type="text" placeholder="Description">
+            <input type="number" placeholder="Amount (₹)">
+            <select>
+                <option value="#">Category</option>
+                <option>Food</option>
+                <option>Transport</option>
+                <option>Shopping</option>
+                <option>Utilities</option>
+                <option>Entertainment</option>
+            </select>
+            <input type="date">
+            <button>+ Add</button>
+        </form>
+    </section>
+    <section>
+        <div class="transaction">
+            <h3>Transaction</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>18 Feb</td>
+                        <td>Swiggy Order</td>
+                        <td>Food</td>
+                        <td class="exp">- ₹ 450</td>
+                    </tr>
+                                  <tr>
+                    <td>17 Feb</td>
+                    <td>Salary</td>
+                    <td>Income</td>
+                    <td class="credit">+ ₹ 85,000</td>
+                </tr>
+                <tr>
+                    <td>16 Feb</td>
+                    <td>Amazon</td>
+                    <td>Shopping</td>
+                    <td class="debit">- ₹ 3,200</td>
+                </tr>
+                <tr>
+                    <td>15 Feb</td>
+                    <td>Electricity Bill</td>
+                    <td>Utilities</td>
+                    <td class="debit">- ₹ 1,800</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    </main>
+<footer>
+    Expense Tracker © 2025
+</footer>
+</body>
+</html>
