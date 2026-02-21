@@ -34,7 +34,16 @@ nav{
     background-color: var(--primary-color);
     padding: 2px;
 }
+
 section{
     display: flex;
     justify-content: space-between;
 }
+@media(max-width: 600px) {
+    section{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+}
+
