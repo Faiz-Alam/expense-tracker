@@ -105,7 +105,7 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
 
-        .step-number {
+        .image-number {
             font-size: 40px;
             font-weight: bold;
             color: #ddd; /* Light grey for the number */
