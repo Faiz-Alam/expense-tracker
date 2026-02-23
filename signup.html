@@ -1,100 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup page</title>
-    <style>
-        body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    min-height: 100vh;
-        }
-        img{
-            width: 150px;
-            margin-top: 30px;
-        }
-        
-        
-        form{
-            border: 1px solid grey;
-            border-radius: 8px;
-            padding: 20px;
-            max-width: 400px;
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup page</title>
+        <style>
+            :root{
+                --bg: #F8FAFC; /* light background */
+                --muted: #E6EEF6; /* hero bg */
+                --primary: #16A34A; /* green */
+                --dark: #0f172a; /* dark text */
+                --card-shadow: 0 8px 24px rgba(15,23,42,0.06);
+                --radius: 12px;
+            }
+            body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            min-height: 100vh;
+            background-color: var(--muted)
+            }
+            img{
+                width: 150px;
+                margin-top: 30px;
+            }
             
+            
+            form{
+                border: 1px solid grey;
+                border-radius: 8px;
+                padding: 20px;
+                max-width: 400px;
+                background-color: var(--bg);
+                
 
-        }
-        input,button{
-            width: 100%;
-            box-sizing: border-box;
-            padding: 8px;
-            margin-top: 10px;
-        }
-        #login-signup{
-            text-align: center;
-        }
-        footer{
-            margin-top: auto;
-            margin-bottom: 20px;
-        }
-        #terms{
-            width:auto;
-        }
-    </style>
-</head>
-<body >
-    <a href="index.html"><img src="logo.png" alt="logo_img"></a>
-    <h1>Expense Tracker</h1>
-    <form action="#" method="post">
-        <label for="name">Name</label>
-        <input type="text" id="name" required placeholder="Enter your name">
-        <label for="email">Email</label><br>
-        <input type="email" id="email" placeholder="example@gmail.com" required><br>
-        
-        <label for="password">Password</label>        
-        
-        <input type="password" id="password" placeholder="password" required>
-        <label for="confirm-pass">confirm password</label>
-        <input type="password" name="confirm-pass" id="confirm-pass" placeholder="password"required>
-        <p id="red-error" style="color: red;"></p>
-        <!-- Terms and conditions -->
-        <input type="checkbox" id="terms" required>
-        <label for="terms">I agree to the Terms and Services</label>
-        
-        <div id="login-signup">
-        <button type="button" onclick="handleSignup()">Signup</button> 
-        or 
-        <a href="login.html">Login</a>
-        </div>
-    </form>
-    <footer>
-        <small>expense-tracker 2026</small>
-    </footer>
-    <script>
-        
-        function handleSignup(){
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let pass = document.getElementById("password").value;
-        let checkpass = document.getElementById("confirm-pass").value;
-        
-        if (pass===checkpass){
-        localStorage.setItem("username", name)
-        localStorage.setItem('email',email)
-        localStorage.setItem("pass",pass)
-        window.location.href = "login.html"
-        }
-        else{
-            mismatch =document.getElementById("red-error")
-            mismatch.innerText ="password didn't matched"
-        }
+            }
+            input,button{
+                width: 100%;
+                box-sizing: border-box;
+                padding: 8px;
+                margin-top: 10px;
+            }
+            label {
+                display: block;
+                margin-top: 12px;
+            }
+            #login-signup{
+                text-align: center;
+            }
+            footer{
+                text-align: center;
+                margin-top: auto;
+                margin-bottom: 10px;
+                background-color: #f0f8ff;
+                padding: 8px;
+            }
+            #terms{
+                width:auto;
+            }
+            .logo{
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            nav{
+                padding: 10px 5%;
+            }
+            nav a{
+                color: var(--dark);
+                font-weight: 600;
+            }
+            ul{
+                display: flex;
+                justify-content: space-between;
+                list-style-type: none;
+                padding: 0;
+                
+            }
+            a{
+            text-decoration: none; 
+            }
+            img{
+                width:50px;
+            }
+            .appname{
+                margin-top: 30px;
+            }
+            .terms-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            }
 
+            .terms-container label {
+            display: inline;
+            margin-top: 0;
+            }
+
+            .terms-container input {
+            width: auto;
+            margin-top: 0;
+            }
+        </style>
+    </head>
+    <body >
         
-        // redirecting to login page 
         
-        }
-    </script>
-</body>
-</html>
+        <nav>
+        <ul>
+            <li><div class="logo"><a href="index.html"><img src="images/wallet.png" alt="logo"></a>
+            <a id="index.html" class="appname">Expense-Tracker</a></div></li>
+
+        </ul>
+
+        </nav>
+        <form action="#" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" required placeholder="Enter your name">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="example@gmail.com" required>
+            
+            <label for="password">Password</label>        
+            
+            <input type="password" id="password" placeholder="password" required>
+            <label for="confirm-pass">Confirm password</label>
+            <input type="password" name="confirm-pass" id="confirm-pass" placeholder="password"required>
+            <p id="red-error" style="color: red;"></p>
+            <!-- Terms and conditions -->
+            <div class="terms-container">
+            <input type="checkbox" id="terms" required>
+            <label for="terms">I agree to the Terms and Services</label>
+            </div>
+            <div id="login-signup">
+            <button type="button" onclick="handleSignup()">Signup</button> 
+            or 
+            <a href="login.html">Login</a>
+            </div>
+        </form>
+        <footer>
+            <small>expense-tracker 2026</small>
+        </footer>
+        <script>
+            
+            function handleSignup(){
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let pass = document.getElementById("password").value;
+            let checkpass = document.getElementById("confirm-pass").value;
+            
+            if (pass===checkpass){
+            localStorage.setItem("username", name)
+            localStorage.setItem('email',email)
+            localStorage.setItem("pass",pass)
+            window.location.href = "login.html"
+            }
+            else{
+                mismatch =document.getElementById("red-error")
+                mismatch.innerText ="password didn't matched"
+            }
+
+            
+            // redirecting to login page 
+            
+            }
+        </script>
+    </body>
+    </html>

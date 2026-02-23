@@ -54,15 +54,49 @@
             margin-top: 8px;
             box-sizing: border-box;
         }
+        img{
+            width: 50px;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            padding: 0;
+            
+        }
+        a{
+           text-decoration: none; 
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        nav{
+            padding: 10px 5%;
+        }
+        nav a{
+            color: var(--dark);
+            font-weight: 600;
+        }
+        .cards {
+            background-color: white;
+            box-shadow: 0 8px 24px rgba(15,23,42,0.06);
+            padding: 24px 40px;
+            border: none; /* remove grey border */
+        }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#">Logo</a></li>
-            <li>Name</li>
+            <li><div class="logo"><a href="#"><img src="images/wallet.png" alt="logo"></a> <a id="#" class="appname">Expense-Tracker</a></div></li>
             <li><a href="index.html">Logout</a></li>
         </ul>
+
     </nav>
     <section class="dashboard-1">
         <div class="cards">

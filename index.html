@@ -5,23 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{box-sizing: border-box;}
         :root{
-            --brand-navy:#0f172a;
-            --brand-green:#10b981;
-            --light-bg: #f8fafc;
+            --bg: #F8FAFC; /* light background */
+            --muted: #E6EEF6; /* hero bg */
+            --primary: #16A34A; /* green */
+            --dark: #0f172a; /* dark text */
+            --card-shadow: 0 8px 24px rgba(15,23,42,0.06);
+            --radius: 12px;
         }
         body{
             padding: 0;
             margin: 0;
-            font-family: system-ui, -apple-system, sans-serif;
-            background-color: var(--light-bg);
+            font-family:sans-serif, system-ui, -apple-system;
+            background-color: var(--bg);
         }
         nav{
             padding: 10px 5%;
         }
         nav a{
-            color: var(--brand-navy);
-            
+            color: var(--dark);
+            font-weight: 600;
         }
         ul{
             display: flex;
@@ -37,10 +41,10 @@
             text-decoration: underline;
         }
         header h1{
-            color: var(--brand-navy);
+            color: var(--dark);
         }
         .hero{
-            background-color: aliceblue;
+            background-color: var(--muted);
             text-align: center;
             padding: 60px 20px;
 
@@ -49,14 +53,14 @@
 
         .btn{
             color: white;
-            background-color: var(--brand-navy);
-            border-radius: 8px;
-            border-radius: 3px;
-            border: 2px solid var(--brand-navy);
+            background-color: var(--primary);
+            border-radius: var(--radius);
+            /* border-radius: 8px; */
+            border: 2px solid var(--primary);
             padding: 12px 24px;
         }
         .btn:hover,.btn a:hover{
-            background-color: var(--brand-green);
+            background-color: #15803d;
             color: white;
             text-decoration: none;
         }
@@ -72,11 +76,13 @@
 
         }
         .feature-card{
-            border: 1px solid rgb(79, 238, 70);
-            border-radius: 8px;
+            border: 1px solid rgba(15,23,42,0.05);
+            border-radius: 12px;
             padding: 8px;
+            background-color: white;
             width: 300px;
             text-align: center;
+            box-shadow: 0 6px 18px rgba(15,23,42,0.08);
             
         }
         footer{
@@ -84,21 +90,33 @@
             margin-top: auto;
             margin-bottom: 10px;
             background-color: #f0f8ff;
+            padding: 8px;
         }
         img{
-            width:150px;
+            width:50px;
         }
         header{
-            color: var(--main-navy);
+            color: var(--primary);
+        }
+
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .accent{
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 8px auto 16px;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#"><img src="logo.png" alt="logo"></a></li>
-            <!-- <li><a href="#features">About</a></li>
-            <li><a href="#contact us">contact us</a></li> -->
+            <li><div class="logo"><a href="#"><img src="images/wallet.png" alt="logo"></a> <a id="#" class="appname">Expense-Tracker</a></div></li>
             <li><a href="login.html">Signin</a></li>
         </ul>
 
@@ -113,20 +131,20 @@
     </section>
     <section class="feature" id="features">
         <div class="feature-card">
-            <img src="" alt="">
             <h3>Track Spending</h3>
+            <div class="accent"></div>
             <p>Log your daily expenses in seconds. 
                 Know exactly where every dollar goes.</p>
         </div>
         <div class="feature-card">
-            <img src="" alt="">
             <h3>Set Intentions</h3>
+            <div class="accent"></div>
             <p>Don't just budget. Choose what you want
                  to fund, like travel or a new home.</p>
         </div>
         <div class="feature-card">
-            <img src="" alt="">
             <h3>See Growth</h3>
+            <div class="accent"></div>
             <p>Watch your savings grow as you cut out
                  the things you don't actually need.</p>
         </div>

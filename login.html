@@ -5,12 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login page</title>
     <style>
+        *{box-sizing: border-box;}
+        :root{
+        --bg: #F8FAFC; /* light background */
+        --muted: #E6EEF6; /* hero bg */
+        --primary: #16A34A; /* green */
+        --dark: #0f172a; /* dark text */
+        --card-shadow: 0 8px 24px rgba(15,23,42,0.06);
+        --radius: 12px;
+        }
         body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        min-height: 100vh;
+        justify-content: center;
+        font-family: sans-serif;
+        background-color: #F8FAFC;
         }
         img{
             width: 150px;
@@ -20,17 +32,29 @@
         #pass{
             display: flex;
             justify-content: space-between;
+            align-items: center;
             width: 100%;
-            
-            
+            margin-top: 8px;
+            gap: 10px; 
         }
         form{
             border: 1px solid grey;
             border-radius: 8px;
             padding: 20px;
-            max-width: 400px;
+            max-width: 450px;
             
 
+        }
+        button{
+            background-color: #16A34A;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover{
+            background-color: #15803d;
         }
         input,button{
             width: 100%;
@@ -49,25 +73,76 @@
         footer{
             margin-top: auto;
             margin-bottom: 20px;
+            background-color: #f0f8ff
         }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        img{
+            width: 50px;
+        }
+        h1{
+            color: #0f172a;
+            margin: 0;
+            margin-top: 40px;
+        }
+                .logo{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        nav{
+            padding: 10px 5%;
+        }
+        nav a{
+            color: var(--dark);
+            font-weight: 600;
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            padding: 0;
+            
+        }
+        a{
+           text-decoration: none; 
+           
+        }
+        img{
+            width:50px;
+        }
+        .appname{
+            margin-top: 30px;
+        }
+        /* span{
+            margin-top: 20px;
+        } */
     </style>
 </head>
 <body >
-    <a href="index.html"><img src="logo.png" alt="logo_img"></a>
-    <h1>Expense Tracker</h1>
+    <header>
+    <a href="index.html"><img src="images/wallet.png" alt="logo_img"></a>
+    <a href="index.html"><h1>Expense Tracker</h1></a>
+    </header>
     <form action="#" method="post">
         <label for="email">Email</label><br>
         <input type="email" id="email" placeholder="example@gmail.com" required><br>
         <div id="pass">
-        <label for="password">password</label>
-        <a href="#">forgotten password?</a>
+        <label for="password">Password</label>
+        <a href="#"><small>forgotten password?</small></a>
         </div>
         <input type="password" id="password" placeholder="password" required>
         <p id="error-msg" style="color: red;"></p>
         <div id="login-signup">
         <button type="button" onclick="handleLogin()">Login</button> 
+        <span>
         or 
         <a href="signup.html">signup</a>
+        </span>
         </div>
     </form>
     <footer>
@@ -76,18 +151,25 @@
     <script>
         
         function handleLogin(){
-            let email = document.getElementById("email").value
-            let password = document.getElementById("password").value
-            let storedEmail = localStorage.getItem("email")
-            let storedPass = localStorage.getItem("pass")
-            if (email===storedEmail && password === storedPass){
-                window.location.href = "dashboard.html"
-            }
-            else{
-                let redError = document.getElementById("error-msg")
-                redError.innerText = "Invalid email or password"
-            }
+    let email = document.getElementById("email").value
+    let password = document.getElementById("password").value
+    
+    if (email === "" || password === "") {
+        let redError = document.getElementById("error-msg")
+        redError.innerText = "Please fill in all fields"
+        return
         }
+        
+        let storedEmail = localStorage.getItem("email")
+        let storedPass = localStorage.getItem("pass")
+        if (email===storedEmail && password === storedPass){
+            window.location.href = "dashboard.html"
+        }
+        else{
+            let redError = document.getElementById("error-msg")
+            redError.innerText = "Invalid email or password"
+        }
+    }
 
     </script>
 </body>
