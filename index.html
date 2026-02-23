@@ -1,53 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Mindful Mint - Track Your Money</title>
-    <link rel="stylesheet" href="style/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --brand-navy:#0f172a;
+            --brand-green:#10b981;
+            --light-bg: #f8fafc;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--light-bg);
+        }
+        nav{
+            padding: 10px 5%;
+        }
+        nav a{
+            color: var(--brand-green);
+            
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            padding: 0;
+            
+        }
+        a{
+           text-decoration: none; 
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        header h1{
+            color: var(--brand-navy);
+        }
+        .hero{
+            background-color: aliceblue;
+            text-align: center;
+            padding: 60px 20px;
+
+
+        }
+
+        .btn{
+            color: white;
+            background-color: var(--brand-navy);
+            border-radius: 8px;
+            border-radius: 3px;
+            border: 2px solid var(--brand-navy);
+            padding: 12px 24px;
+        }
+        .btn:hover,.btn a:hover{
+            background-color: var(--brand-green);
+            color: white;
+            text-decoration: none;
+        }
+        
+        .feature{
+            /* border: 1px solid grey; */
+            padding: 18px;
+            margin: 20px;
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+
+        }
+        .feature-card{
+            border: 1px solid rgb(79, 238, 70);
+            border-radius: 8px;
+            padding: 8px;
+            width: 300px;
+            text-align: center;
+            
+        }
+        footer{
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: 10px;
+            background-color: #f0f8ff;
+        }
+        img{
+            width:150px;
+        }
+        header{
+            color: var(--main-navy);
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#"><img src="logo.png" alt="logo"></a></li>
+            <li><a href="#features">About</a></li>
+            <li><a href="#contact us">contact us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
 
-    <div class="navbar">
-        <a href="#" class="logo"><img id="logo" src="/expense-tracker/images/save-money.png" alt=""> MoneyMap</a>
-        <div class="nav-links">
-            <a href="#how">Method</a>
-            <a href="#">Pricing</a>
-            <a href="login.html">Login</a>
-        </div>
-    </div>
-
-    <div class="hero">
-        <h1>Spend Money on Purpose.</h1>
-        <p>Simple tools to track your expenses and save for what actually matters.</p>
-        <a href="signup.html" class="btn">Start Tracking Free</a>
-    </div>
-
-    <div class="section-container" id="how">
-        <h2 class="section-title">The Mindful Mint Process</h2>
+    </nav>
+    <section class="hero">
+        <header>
+            <h1>Expense Tracker</h1>
+        </header>
         
-        <div class="feature-flex">
-            <div class="feature-box">
-                <span class="image-number">1</span>
-                <h3>Track Spending</h3>
-                <p>Log your daily expenses in seconds. Know exactly where every dollar goes.</p>
-            </div>
-
-            <div class="feature-box">
-                <span class="image-number">2</span>
-                <h3>Set Intentions</h3>
-                <p>Don't just budget. Choose what you want to fund, like travel or a new home.</p>
-            </div>
-
-            <div class="feature-box">
-                <span class="image-number">3</span>
-                <h3>See Growth</h3>
-                <p>Watch your savings grow as you cut out the things you don't actually need.</p>
-            </div>
+        <p>Get organized on your fingertips: budget, salary, and savings. all in one app</p>
+        <a href="signup.html" class="btn">Start Tracking</a>
+    </section>
+    <section class="feature" id="features">
+        <div class="feature-card">
+            <img src="" alt="">
+            <h3>Track Spending</h3>
+            <p>Log your daily expenses in seconds. 
+                Know exactly where every dollar goes.</p>
         </div>
-    </div>
-
-    <div class="footer">
-        <p>&copy; 2026 Mindful Mint. Better money, better life.</p>
-    </div>
-
+        <div class="feature-card">
+            <img src="" alt="">
+            <h3>Set Intentions</h3>
+            <p>Don't just budget. Choose what you want
+                 to fund, like travel or a new home.</p>
+        </div>
+        <div class="feature-card">
+            <img src="" alt="">
+            <h3>See Growth</h3>
+            <p>Watch your savings grow as you cut out
+                 the things you don't actually need.</p>
+        </div>
+    </section>
+    <footer>
+        © 2026 Expense-Tracker. Better money, better life.
+        <a href="#">privacy terms and policy</a>
+    </footer>
 </body>
 </html>

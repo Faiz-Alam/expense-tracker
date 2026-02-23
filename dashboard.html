@@ -3,107 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="style/dashboard.css">
-
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            margin: 0px;
+            padding: 0px;
+        }
+        li{
+            margin: 10px;
+        }
+        .dashboard-1{
+            display: flex;
+            justify-content: center;
+            gap:8px;
+            justify-content:space-around;
+            margin: 2px;
+             
+        }
+        @media(max-width:600px){
+            .dashboard-1{
+            display: flex;  
+            justify-content: center;
+            gap:8px;
+            justify-content:space-around;
+            margin: 2px;
+            flex-direction: column;
+             
+        }
+        }
+        .cards{
+            border: 1px solid grey;
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+        }
+        form{
+            border: 1px solid grey;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        input,select,.btn{
+            width: 100%;
+            margin-top: 8px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-    <header>
     <nav>
-        <ul id="navbar">
-            <li><a href="#Home">Home</a></li>
-            <li><a href="#About Us">About Us</a></li>
-            <li><a href="#Contact">Contact</a></li>
-            <li><a href="#Price Tracker">Price Tracker</a></li>
+        <ul>
+            <li><a href="#">Logo</a></li>
+            <li>Name</li>
+            <li><a href="index.html">Logout</a></li>
         </ul>
     </nav>
-    </header>
-
-    <main>
-    <h1>Expense Tracker</h1>
-    <h3>Track where your money goes.</h3>
-    <section>
-        <div class="total-value">
-            <p>Income</p>
-            <div class="income-total">
-                ₹ 85,000
-            </div>
+    <section class="dashboard-1">
+        <div class="cards">
+            <h2>Income</h2>
+            <p>2000 $</p>
         </div>
-        <div class="total-value">
-            <p>expenses</p>
-            <div class="income-total">
-                ₹ 42,300
-            </div>
+        <div class="cards">
+            <h2>Expense</h2>
+            <p>1000 $</p>
         </div>
-
-        <div class="total-value">
-            <p>Savings</p>
-            <div class="income-total">
-                ₹ 42,700
-            </div>
+        <div class="cards">
+            <h2>Saving</h2>
+            <p>1000$</p>
         </div>
     </section>
-
     <section>
         <form action="#">
-            <input type="text" placeholder="Description">
-            <input type="number" placeholder="Amount (₹)">
-            <select>
-                <option value="#">Category</option>
-                <option>Food</option>
-                <option>Transport</option>
-                <option>Shopping</option>
-                <option>Utilities</option>
-                <option>Entertainment</option>
+            <h3>Add Expense</h3>
+            <label for="category">Category</label>
+            <select name="category" id="category">
+                <option value="foods">foods</option>
+                <option value="clothes">clothes</option>
+                <option value="daily Essential">Daily Essential</option>
+                <option value="movies">Movies</option>
+                <option value="drinks">Drinks</option>
+                <option value="others">Others</option>
             </select>
-            <input type="date">
-            <button>+ Add</button>
+            <label for="price">Price:</label>
+            <input type="number" id="price">
+            <label for="date">Date: </label>
+            <input type="date" id="date">
+            <label for="description">Description: </label>
+            <input type="text" id="description">
+            <button class="btn" onclick="addExpense()" type="button">Add</button>
         </form>
+
     </section>
     <section>
-        <div class="transaction">
-            <h3>Transaction</h3>
+        <div class="div">
+            <p>Transaction list</p>
             <table>
                 <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Description</th>
-                        <th>Category</th>
-                        <th>Amount</th>
+                    <th>Sr.no</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>price</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>18 Feb</td>
-                        <td>Swiggy Order</td>
-                        <td>Food</td>
-                        <td class="exp">- ₹ 450</td>
-                    </tr>
-                                  <tr>
-                    <td>17 Feb</td>
-                    <td>Salary</td>
-                    <td>Income</td>
-                    <td class="credit">+ ₹ 85,000</td>
-                </tr>
-                <tr>
-                    <td>16 Feb</td>
-                    <td>Amazon</td>
-                    <td>Shopping</td>
-                    <td class="debit">- ₹ 3,200</td>
-                </tr>
-                <tr>
-                    <td>15 Feb</td>
-                    <td>Electricity Bill</td>
-                    <td>Utilities</td>
-                    <td class="debit">- ₹ 1,800</td>
-                </tr>
+                <tbody id="transaction">
                 </tbody>
+                
             </table>
         </div>
+
     </section>
-    </main>
-<footer>
-    Expense Tracker © 2025
-</footer>
+
+
+<script>
+    let count = 1
+    function addExpense(){
+        let category = document.getElementById("category").value
+        let price = document.getElementById("price").value
+        let date = document.getElementById("date").value
+        let description = document.getElementById("description").value
+
+        let tablebody = document.getElementById("transaction")
+        tablebody.innerHTML += "<tr><td>" + count +"</td>"  + "<td>" + category +"</td>"  + "<td>" + description + "</td>"+ "<td>" + date + "</td>" + "<td>" + price + "</td>"+ "</tr>"
+        document.getElementById("category").value = ""
+        document.getElementById("price").value =""
+        document.getElementById("date").value = ""
+        document.getElementById("description").value = ""
+
+        count++
+        
+    }
+</script>
 </body>
 </html>

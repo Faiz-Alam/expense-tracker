@@ -3,9 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Signup page</title>
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+        }
+        img{
+            width: 150px;
+            margin-top: 30px;
+        }
+        
+        
+        form{
+            border: 1px solid grey;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 400px;
+            
+
+        }
+        input,button{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        #login-signup{
+            text-align: center;
+        }
+        footer{
+            margin-top: auto;
+            margin-bottom: 20px;
+        }
+        #terms{
+            width:auto;
+        }
+    </style>
 </head>
-<body>
-    
+<body >
+    <a href="index.html"><img src="logo.png" alt="logo_img"></a>
+    <h1>Expense Tracker</h1>
+    <form action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" required placeholder="Enter your name">
+        <label for="email">Email</label><br>
+        <input type="email" id="email" placeholder="example@gmail.com" required><br>
+        
+        <label for="password">Password</label>        
+        
+        <input type="password" id="password" placeholder="password" required>
+        <label for="confirm-pass">confirm password</label>
+        <input type="password" name="confirm-pass" id="confirm-pass" placeholder="password"required>
+        <p id="red-error" style="color: red;"></p>
+        <!-- Terms and conditions -->
+        <input type="checkbox" id="terms" required>
+        <label for="terms">I agree to the Terms and Services</label>
+        
+        <div id="login-signup">
+        <button type="button" onclick="handleSignup()">Signup</button> 
+        or 
+        <a href="login.html">Login</a>
+        </div>
+    </form>
+    <footer>
+        <small>expense-tracker 2026</small>
+    </footer>
+    <script>
+        
+        function handleSignup(){
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let pass = document.getElementById("password").value;
+        let checkpass = document.getElementById("confirm-pass").value;
+        
+        if (pass===checkpass){
+        localStorage.setItem("username", name)
+        localStorage.setItem('email',email)
+        localStorage.setItem("pass",pass)
+        window.location.href = "login.html"
+        }
+        else{
+            mismatch =document.getElementById("red-error")
+            mismatch.innerText ="password didn't matched"
+        }
+
+        
+        // redirecting to login page 
+        
+        }
+    </script>
 </body>
 </html>

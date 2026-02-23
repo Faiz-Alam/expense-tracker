@@ -3,52 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker- LoginPage</title>
-    <link rel="stylesheet" href="style/login.css">
+    <title>Login page</title>
+    <style>
+        body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+        }
+        img{
+            width: 150px;
+            margin-top: 30px;
+        }
+        
+        #pass{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            
+            
+        }
+        form{
+            border: 1px solid grey;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 400px;
+            
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com" />
-
-
+        }
+        input,button{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        #login-signup{
+            text-align: center;
+        }
+        #error-msg{
+            padding-top: 10px;
+            margin: 0px;
+            margin-top:0px;
+        }
+        footer{
+            margin-top: auto;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <!-- navigation -->
-        <nav>
-            <a href="index.html"><img src="images/logo.png" alt="logo"> </a>
-        </nav>
-        
-            <!-- heading -->
-        <header>
-            <h1>Welcome Back!</h1>
-            <p>Sign in to Continue managing your expenses</p>
-        </header>
-        <div class="form-box">
-        <form action="dashboard.html" >
-
-            <label for="email">Email</label><br>
-            <input type="email" name="email" id="email" required placeholder="Enter Your email" ><br>
-            
-            <label for="password">Password</label>
-            <a href="#">forgot password?</a><br>     
-            <input type="password"  name="password" id="password" required placeholder="Enter your Password" ><br>
-            
-
-            <button type="submit" id="btn">Sign In</button><br>
-            <p>or continue with </p>
-            <button id="auth"><span>G </span>Continue with Google</button>
-            </div>
-
-
-        </form>
-        
-        <span id="signup">Don't have an account?
-            <a href="signup.html">signup</a><br>
-        </span>
-        <footer>
-        <small>By continuing, you agree to our <a href="#">Terms of Service</a> and Privacy Policy</small>
-        </footer>
+<body >
+    <a href="index.html"><img src="logo.png" alt="logo_img"></a>
+    <h1>Expense Tracker</h1>
+    <form action="#" method="post">
+        <label for="email">Email</label><br>
+        <input type="email" id="email" placeholder="example@gmail.com" required><br>
+        <div id="pass">
+        <label for="password">password</label>
+        <a href="#">forgotten password?</a>
         </div>
-    </div>
+        <input type="password" id="password" placeholder="password" required>
+        <p id="error-msg" style="color: red;"></p>
+        <div id="login-signup">
+        <button type="button" onclick="handleLogin()">Login</button> 
+        or 
+        <a href="signup.html">signup</a>
+        </div>
+    </form>
+    <footer>
+        <small>expense-tracker 2026</small>
+    </footer>
+    <script>
+        
+        function handleLogin(){
+            let email = document.getElementById("email").value
+            let password = document.getElementById("password").value
+            let storedEmail = localStorage.getItem("email")
+            let storedPass = localStorage.getItem("pass")
+            if (email===storedEmail && password === storedPass){
+                window.location.href = "dashboard.html"
+            }
+            else{
+                let redError = document.getElementById("error-msg")
+                redError.innerText = "Invalid email or password"
+            }
+        }
 
+    </script>
 </body>
 </html>
